@@ -2,17 +2,24 @@
   "name": "cruds-app",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@material-ui/core": "^3.0.3",
-    "prop-types": "^15.6.2",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "react-scripts": "1.1.5"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "engines": {
+    "node": "9.7.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.0.3",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-scripts": "1.1.5"
+  },
+  "devDependencies": {}
 }

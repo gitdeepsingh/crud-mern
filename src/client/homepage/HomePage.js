@@ -1,8 +1,18 @@
 import React from 'react';
 import './HomePage.css';
-import InventoryComponent from '../inventory/InventoryComponent'
+import * as appApi from '../api/appApi';
+import InventoryComponent from '../inventory/InventoryComponent';
 
 class HomePage extends React.Component {
+  constructor() {
+    super();
+    this.state = {}
+  };
+  componentDidMount() {
+    appApi.getWelcome();
+    appApi.getUsers();
+  }
+
   render() {
     return (
       <div className="">
