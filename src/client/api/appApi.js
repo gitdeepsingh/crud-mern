@@ -1,21 +1,24 @@
 import axios from 'axios';
 
-export const getWelcome = () => {
+export const postInventory = () => {
   axios({
-    method: 'get',
-    url: 'http://localhost:4200/',
-    responseType: 'json'
-  }).then((res) => {
-    console.log('getWelcome', res)
-  }, (err) => { console.warn('Unable to fetch') });
+    method: 'post',
+    url: 'http://localhost:4200/inventory',
+    data: {
+      "code": 1,
+      "prodName": "Custody",
+      "stockCount": 11
+    }
+  });
 }
 
-export const getUsers = () => {
-  axios({
-    method: 'get',
-    url: 'http://localhost:4200/users',
-    responseType: 'json'
-  }).then((res) => {
-    console.log('getUsers', res)
-  }, (err) => { console.warn('Unable to fetch') });
-}
+
+// export const getUsers = () => {
+//   axios({
+//     method: 'post',
+//     url: 'http://localhost:4200/users',
+//     responseType: 'json'
+//   }).then((res) => {
+//     console.log('getUsers', res)
+//   }, (err) => { console.warn('Unable to fetch') });
+// }

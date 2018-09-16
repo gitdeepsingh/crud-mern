@@ -9,8 +9,8 @@ class HomePage extends React.Component {
     this.state = {}
   };
   componentDidMount() {
-    appApi.getWelcome();
-    appApi.getUsers();
+    appApi.postInventory();
+    // appApi.getUsers();
   }
 
   render() {
