@@ -10,7 +10,6 @@ class HomePage extends React.Component {
   };
   componentDidMount() {
     appApi.postInventory();
-    // appApi.getUsers();
   }
 
   render() {
@@ -18,6 +17,7 @@ class HomePage extends React.Component {
       <div className="">
         Dashboard Page
         <InventoryComponent />
+        <button onClick={appApi.getInventory}>GET DETAILS</button>
       </div>
     );
   }

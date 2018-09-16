@@ -13,12 +13,12 @@ export const postInventory = () => {
 }
 
 
-// export const getUsers = () => {
-//   axios({
-//     method: 'post',
-//     url: 'http://localhost:4200/users',
-//     responseType: 'json'
-//   }).then((res) => {
-//     console.log('getUsers', res)
-//   }, (err) => { console.warn('Unable to fetch') });
-// }
+export const getInventory = () => {
+  axios({
+    method: 'get',
+    url: 'http://localhost:4200/inventory',
+    responseType: 'json'
+  }).then((res) => {
+    console.log('getUsers', res)
+  }, (err) => { console.warn('Unable to fetch') });
+}

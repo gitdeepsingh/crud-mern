@@ -32,6 +32,14 @@ app.post('/inventory', (req, res) => {
   })
 });
 
+app.get('/inventory', (req, res) => {
+  Product.find().then((prod) => {
+    res.send({ prod })
+  }, (err) => {
+    res.status(400).send(err)
+  })
+});
+
 app.listen(port, () => {
   console.log(`Server is up at port ${port}`);
 });
