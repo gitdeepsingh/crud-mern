@@ -3,8 +3,24 @@ const request = require('supertest');
 const { app } = require('../server');
 const { Product } = require('../models/product');
 
+const products = [
+  {
+    "code": 1,
+    "prodName": "Custody",
+    "stockCount": 11,
+  },
+  {
+    "code": 4,
+    "prodName": "Woozoo",
+    "stockCount": 33,
+  },
+]
+
 beforeEach((done) => {
-  Product.remove({}).then(() => done());
+  Product.remove({}).then(() => {
+    return Product.insertMany(products);
+  })
+    .then(() => done());
 });
 
 describe('POST /inventory', () => {
@@ -29,8 +45,8 @@ describe('POST /inventory', () => {
           return done(err);
         }
 
-        Product.find().then((prod) => {
-          expect(prod.length).toBe(1);
+        Product.find(obj[0]).then((prod) => {
+          expect(prod.length).toBe(3);
           done();
         }).catch((e) => done(e));
       })
@@ -48,9 +64,21 @@ describe('POST /inventory', () => {
         }
 
         Product.find().then((prod) => {
-          expect(prod.length).toBe(0);
+          expect(prod.length).toBe(2);
           done();
         }).catch((e) => done(e));
       })
   })
-})
+});
+
+describe('GET /inventory', () => {
+  it('should get all products from the inventory', (done) => {
+    request(app)
+      .get('/inventory')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.products.length).toBe(2);
+      })
+    .end(done)
+  });
+});

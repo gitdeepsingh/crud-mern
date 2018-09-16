@@ -29,15 +29,15 @@ app.post('/inventory', (req, res) => {
     res.send(doc);
   }, (err) => {
     res.status(400).send(err);
-  })
+  });
 });
 
 app.get('/inventory', (req, res) => {
-  Product.find().then((prod) => {
-    res.send({ prod })
+  Product.find().then((products) => {
+    res.send({ products })
   }, (err) => {
     res.status(400).send(err)
-  })
+  });
 });
 
 app.listen(port, () => {
