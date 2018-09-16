@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test" : "mocha src/server/tests/*.test.js",
+    "test-watch": "nodemon --exec npm test",
     "eject": "react-scripts eject"
   },
   "engines": {
@@ -23,5 +24,10 @@
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "expect": "^23.6.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "supertest": "^3.3.0"
+  }
 }
