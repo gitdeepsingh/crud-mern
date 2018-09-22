@@ -22,7 +22,7 @@ const Product = mongoose.model('Product', {
     default: false
   },
   expiryDate: {
-    type: Number,
+    type: String,
     default: new Date().getMilliseconds()
   }
 });

@@ -18,11 +18,12 @@ app.use(allowCrossDomain);
 
 app.use(bodyParser.json());
 
-app.post('/inventory', (req, res) => {
+app.post('/addproduct', (req, res) => {
   const product = new Product({
     code: req.body.code,
     prodName: req.body.prodName,
-    stockCount: req.body.stockCount
+    stockCount: req.body.stockCount,
+    expiryDate : req.body.expDate
   })
 
   product.save().then((doc) => {

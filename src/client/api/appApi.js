@@ -1,17 +1,12 @@
 import axios from 'axios';
 
-export const postInventory = () => {
+export const addProduct = (prodDetails) => {
   axios({
     method: 'post',
-    url: 'http://localhost:4200/inventory',
-    data: {
-      "code": 1,
-      "prodName": "Custody",
-      "stockCount": 11
-    }
+    url: 'http://localhost:4200/addproduct',
+    data: prodDetails
   });
 }
-
 
 export const getInventory = () => {
   axios({

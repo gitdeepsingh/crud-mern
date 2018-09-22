@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePage.css';
 import * as appApi from '../api/appApi';
-import InventoryComponent from '../inventory/InventoryComponent';
+import AddProductComponent from '../addProduct/AddProductComponent';
 
 class HomePage extends React.Component {
   constructor() {
@@ -9,15 +9,14 @@ class HomePage extends React.Component {
     this.state = {}
   };
   componentDidMount() {
-    appApi.postInventory();
+    appApi.getInventory();
   }
 
   render() {
     return (
       <div className="">
         Dashboard Page
-        <InventoryComponent />
-        <button onClick={appApi.getInventory}>GET DETAILS</button>
+        <AddProductComponent />
       </div>
     );
   }
