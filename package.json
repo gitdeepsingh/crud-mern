@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test" : "mocha src/server/tests/*.test.js",
+    "test": "mocha src/server/tests/*.test.js",
     "test-watch": "nodemon --exec npm test",
     "eject": "react-scripts eject"
   },
@@ -22,6 +22,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },
   "devDependencies": {
