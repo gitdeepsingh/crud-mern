@@ -1,6 +1,6 @@
 ## Basic CRUD operations using MongoDB, Expressjs, Reactjs and Nodejs
 
-This project was bootstrapped with [Create React App].
+This project is bootstrapped with [Create React App].
 For styling Material-UI is used.
 
 For client(react), the app uses port 3000.
